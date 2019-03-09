@@ -73,6 +73,7 @@ namespace Assignment1
                 // goal - fraction with odd numerator as +, Numerators increment by 1 and create factorial
                 //        denominator = numerator + 1
                 // n = max number for number of fractions  i.e.  5
+                //
         
                 double result = 0;
                 for (int i = 1;

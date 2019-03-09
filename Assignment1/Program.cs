@@ -29,9 +29,11 @@ namespace Assignment1
         {
             try
             {
-                // Write your code here
+                // Prime number logic uses the idea that only needs to use square root of a number
+                // a = x,  b = y
                // Debug.WriteLine(x);
                 // Debug.WriteLine(y);
+                // sets up number of iterations as x - y
                 int iterations = y - x;
                 for (int i = 0;
                     i <= iterations;
@@ -39,15 +41,17 @@ namespace Assignment1
                 {
                     int number = x + i;
                     var limit = Math.Ceiling(Math.Sqrt(number));
-
+                    // sets up boolean logic to identify if isPrime = True / False
                     bool isPrime = true;
                     for (int j = 2; j <= limit; j++)
                     {
+                        // identifies if prime, in this case if modulo = 0, then isPrime = False
                         if (number % j == 0)
                         {
                             isPrime = false;
                         }
                     }
+                    // sets up isPrime = true, writes out number
                     if (isPrime)
                     {
                         Debug.WriteLine(number);
@@ -113,13 +117,17 @@ namespace Assignment1
         {
             try
             {
-                // Write your code here
+                // logic was to understand the nuber of stars on each line and determine the relationship
+                // for example each line in the tree decreased by 2
+                // i = used in calculation number of stars
                 for(int i = 1; 
                         i <= n; 
                         i++)
                 {
                     int numberOfStars = i * 2 - 1;
+                    // based on the number of stars for each line for example top line had 1 so  = 1*2-1 = 1,  2*2-1 = 3
                     int numberOfSpaces = n - i;
+                    // below is the creation in the line of the tree comprised of the concatination on stars and spaces
                     string line = new String(' ', numberOfSpaces) + new String('*', numberOfStars);
                     Debug.WriteLine(line);
                 }
@@ -137,12 +145,15 @@ namespace Assignment1
             {
                 // a = { 1, 2, 3, 2, 2, 1, 3, 2 };
                 // for example a[2] = 3 above   (starting at 0)
-                // Write your code here
+                // Below sets up the number of accumulators for each type of number
+                // includes a try and catch block to capture errors and end gracefully
                 int numberOfOnes = 0;
                 int numberOfTwos = 0;
                 int numberOfThrees = 0;
-                for(int i = 0; i < a.Length; i++)
+                // loop used to go through the numbers and use an if statement to increment the accumulator
+                for (int i = 0; i < a.Length; i++)
                 {
+                // a[i] is the position in the array,   it increments after it updates the accumulators found above
                     if(a[i] == 1)
                     {
                         numberOfOnes++;
@@ -156,7 +167,7 @@ namespace Assignment1
                         numberOfThrees++;
                     }
                 }
-
+                // writes out the accumulator with concatination statement
                 Debug.WriteLine("Number      Frequency");
                 Debug.WriteLine("1           " + numberOfOnes);
                 Debug.WriteLine("2           " + numberOfTwos);

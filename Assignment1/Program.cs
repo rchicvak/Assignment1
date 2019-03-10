@@ -74,7 +74,7 @@ namespace Assignment1
                 //        denominator = numerator + 1
                 // n = max number for number of fractions  i.e.  5
                 //
-                // comments
+                // comment
         
                 double result = 0;
                 for (int i = 1;
